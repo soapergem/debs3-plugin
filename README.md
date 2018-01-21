@@ -1,6 +1,6 @@
 # Jenkins deb-s3 Plugin
 
-Jenkins plugin for auomating the deb-s3 tool to publish to Debian repositories in S3
+Jenkins plugin for automating the deb-s3 tool to publish to Debian repositories in S3
 
 This is a ripoff of the [Jenkins DEB Sign Plugin](https://github.com/ivankelly/debsign-plugin), which in turn is a ripoff of the [Jenkins RPM Sign plugin](https://github.com/jenkinsci/rpmsign-plugin). Yay plagiarism!
 
