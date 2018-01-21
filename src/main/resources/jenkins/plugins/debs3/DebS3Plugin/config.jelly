@@ -1,0 +1,33 @@
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
+
+  <f:entry title="${%Sign Debian Repo}">
+
+    <f:repeatable var="debs3" items="${instance.entries}" minimum="${1}" add="${%Add GPG key(s)}">
+
+      <table width="100%">
+
+        <f:entry field="gpgKeyName" title="${%GPG Key}">
+          <f:select value="${debs3.gpgKeyName}" />
+        </f:entry>
+
+        <f:entry field="includes" title="${%Includes}">
+          <f:textbox value="${debs3.includes}" />
+        </f:entry>
+
+        <f:entry field="cmdlineOpts" title="${%Cmdline Options}">
+          <f:textbox value="${debs3.cmdlineOpts}" />
+        </f:entry>
+
+        <f:entry title="">
+          <div align="right">
+            <f:repeatableDeleteButton />
+          </div>
+        </f:entry>
+
+      </table>
+
+    </f:repeatable>
+
+  </f:entry>
+
+</j:jelly>
