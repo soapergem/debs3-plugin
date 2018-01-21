@@ -10,6 +10,10 @@
           <f:select value="${debs3.gpgKeyName}" />
         </f:entry>
 
+        <f:entry field="bucket" title="${%Bucket}">
+          <f:textbox value="${debs3.bucket}" />
+        </f:entry>
+
         <f:entry field="includes" title="${%Includes}">
           <f:textbox value="${debs3.includes}" />
         </f:entry>
