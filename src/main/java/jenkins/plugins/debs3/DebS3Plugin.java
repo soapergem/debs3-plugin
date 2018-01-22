@@ -97,7 +97,7 @@ public class DebS3Plugin extends Recorder {
                         for (FilePath debFilePath : matchedDebs) {
 
                             ArgumentListBuilder debS3Command = new ArgumentListBuilder();
-                            debS3Command.add("debs3", "upload");
+                            debS3Command.add("deb-s3", "upload");
                             debS3Command.addTokenized(debEntry.getCmdlineOpts());
                             debS3Command.add("--bucket", debEntry.getBucket());
                             debS3Command.add(debFilePath.toURI().normalize().getPath());
