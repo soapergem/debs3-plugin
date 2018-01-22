@@ -35,8 +35,8 @@ public class DebS3Plugin extends Recorder {
     private List<DebS3> entries = Collections.emptyList();
 
     @DataBoundConstructor
-    public DebS3Plugin(List<DebS3> debs) {
-        this.entries = debs;
+    public DebS3Plugin(List<DebS3> debs3) {
+        this.entries = debs3;
         if (this.entries == null) {
             this.entries = Collections.emptyList();
         }
@@ -63,8 +63,13 @@ public class DebS3Plugin extends Recorder {
     @Override
     public boolean perform(AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener) throws InterruptedException, IOException {
         if (isPerformDeployment(build)) {
-            listener.getLogger().println("[DebS3Plugin] - Publishing to Debian repo ...");
 
+            if (entries == null || entries.isEmpty()) {
+                listener.getLogger().println("[DebS3Plugin] - step is not properly configured");
+                return false;
+            }
+
+            listener.getLogger().println("[DebS3Plugin] - Publishing to Debian repo ...");
             for (DebS3 debEntry : entries) {
                 StringTokenizer debGlobTokenizer = new StringTokenizer(debEntry.getIncludes(), ",");
 
