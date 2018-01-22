@@ -14,7 +14,7 @@ This plugin depends on having the following installed on the host machine (i.e. 
 * **expect**
 * **deb-s3**
 
-In addition you should also update your `~/.gnupg/gpg.conf` file to include (at least) the following:
+You should also update your `~/.gnupg/gpg.conf` file to include (at least) the following:
 
 ```
 personal-digest-preferences SHA256
@@ -31,4 +31,8 @@ $ mvn package
 
 This will create a hpi file (target/debs3-plugin.hpi). Install this through the Jenkins web UI.
 
+You may also need to establish a symbolic link to deb-s3 so that expect/spawn can find it:
 
+```
+sudo ln -s /usr/local/bin/deb-s3 /usr/bin/deb-s3
+```

@@ -100,7 +100,7 @@ public class DebS3Plugin extends Recorder {
                             debS3Command.add("deb-s3", "upload");
                             debS3Command.addTokenized(debEntry.getCmdlineOpts());
                             debS3Command.add("--bucket", debEntry.getBucket());
-                            debS3Command.add(debFilePath.toURI().normalize().getPath());
+                            debS3Command.addQuoted(debFilePath.toURI().normalize().getPath());
                             debS3Command.add("--sign", gpgKey.getName());
 
                             String debCommandLine = debS3Command.toString();
